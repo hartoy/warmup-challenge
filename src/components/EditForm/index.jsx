@@ -12,7 +12,10 @@ function EditForm (props){
     
 
     const [ user, setUser ] = useState("");
-    const [ loading, setLoading ] = useState(false);
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+    const [userId, setUserId] = useState('');
+    const [newPost, setNewPost] = useState('');
 
     useEffect(() => {
       if(localStorage.email === '"challenge@alkemy.org"' && localStorage.pass === '"react"'){
@@ -23,7 +26,6 @@ function EditForm (props){
           .then((user) => {
             setUser(user)
             console.log(user);
-            setLoading(true)
           })
     
       }else{
@@ -32,12 +34,12 @@ function EditForm (props){
     }, []);
 
 
-    const EditHandler = async (data) => {
+    const EditHandler = async (e) => {
       let response = await Axios.post(
         `https://jsonplaceholder.typicode.com/posts/:id`,JSON.stringify({
-          title: title,
-          body: body,
-          userId: userId,
+          title: user.title,
+          body: user.body,
+          userId: user.userId,
         }),
         {
           headers: {
@@ -45,9 +47,9 @@ function EditForm (props){
           },
         }  
       );
-      //setNewPost(response.data);
-      //console.log(newPost);
-      //alert("Nuevo Post creado");
+      setNewPost(response.e);
+      console.log(newPost);
+      alert(" Post modificado");
     };
 
 
@@ -58,15 +60,15 @@ function EditForm (props){
     <div className="form">
        <p className="tittleForm" >Edit Post</p>
        <h3>Title</h3>
-      <Form.Control type="text" placeholder="Insert Title" value ={user.title}/>
+      <Form.Control type="text" placeholder="Insert Title" value ={user.title} onChange={(e) => setTitle(e.target.value)}/>
      
        <br />
        <h3>Body</h3>
-      <Form.Control size="text" type="text"  as="textarea" rows={4} placeholder="Insert Body" value ={user.body}/>
+      <Form.Control size="text" type="text"  as="textarea" rows={4} placeholder="Insert Body" value ={user.body} onChange={(e) => setBody(e.target.value)}/>
       
       <br />
       <h3>User id</h3>
-      <Form.Control size="text" type="number" placeholder="Insert user Id" value ={user.userId}/>
+      <Form.Control size="text" type="number" placeholder="Insert user Id" value ={user.userId} onChange={(e) => setUserId(e.target.value)}/>
       
       <Button className ="createButton" onClick={EditHandler} > Create</Button>
       </div>
