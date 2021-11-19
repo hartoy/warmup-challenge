@@ -68,7 +68,7 @@ function Home (){
         <ul>
           <li className="eachUser" >Titulo:  {oneUser.title}</li>
           <Button className ="botoneta" as={Link} to={`/Details/${oneUser.id}`}> Details</Button>
-          <Button className ="botoneta"> Edit</Button>
+          <Button className ="botoneta" as={Link} to={`/editForm/${oneUser.id}`}> Edit</Button>
           <Button className ="botoneta" data-id={oneUser.id} onClick={RemoveHandler}> Delete</Button>
         </ul>
     );

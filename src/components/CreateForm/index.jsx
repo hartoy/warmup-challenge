@@ -25,7 +25,6 @@ function CreateForm (){
       }, []);
 
       const CreateHandler = async (data) => {
-        let id = parseInt(data.userId);
         let response = await Axios.post(
           `https://jsonplaceholder.typicode.com/posts`,JSON.stringify({
             title: title,
@@ -58,7 +57,7 @@ function CreateForm (){
      
        <br />
        <h3>Body</h3>
-      <Form.Control size="text" type="text" placeholder="Insert Body" value ={body} onChange={(e) => setBody(e.target.value)}/>
+      <Form.Control size="text" type="text"  as="textarea" rows={4} placeholder="Insert Body" value ={body} onChange={(e) => setBody(e.target.value)}/>
       
       <br />
       <h3>User id</h3>

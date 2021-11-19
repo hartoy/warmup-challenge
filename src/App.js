@@ -25,7 +25,7 @@ function App() {
       <NavbarComp/>
       <Route path="/home" component={Home} />
       <Route path="/createForm" component={CreateForm} />
-      <Route path="/editForm" component={EditForm} />
+      <Route path="/editForm/:id" component={EditForm} />
       <Route path="/Details/:id" component={Details} />
      </div>
 
