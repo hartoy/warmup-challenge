@@ -57,7 +57,7 @@ function CreateForm (){
      
        <br />
        <h3>Body</h3>
-      <Form.Control size="text" type="text"  as="textarea" rows={4} placeholder="Insert Body" value ={body} onChange={(e) => setBody(e.target.value)}/>
+      <Form.Control size="text" type="text"  as="textarea" rows={4}placeholder="Insert Body" value ={body} onChange={(e) => setBody(e.target.value)}/>
       
       <br />
       <h3>User id</h3>

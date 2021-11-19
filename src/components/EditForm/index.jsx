@@ -24,7 +24,9 @@ function EditForm (props){
             return response.json()
           })
           .then((user) => {
-            setUser(user)
+            setTitle(user.title);
+            setBody(user.body);
+            setUserId(user.userId);
             console.log(user);
           })
     
@@ -36,7 +38,7 @@ function EditForm (props){
 
     const EditHandler = async (e) => {
       let response = await Axios.post(
-        `https://jsonplaceholder.typicode.com/posts/:id`,JSON.stringify({
+        `https://jsonplaceholder.typicode.com/posts/${id}`,JSON.stringify({
           title: user.title,
           body: user.body,
           userId: user.userId,
@@ -60,15 +62,15 @@ function EditForm (props){
     <div className="form">
        <p className="tittleForm" >Edit Post</p>
        <h3>Title</h3>
-      <Form.Control type="text" placeholder="Insert Title" value ={user.title} onChange={(e) => setTitle(e.target.value)}/>
+      <Form.Control type="text" placeholder="Insert Title" value ={title}  onChange={(e) => setTitle(e.target.value)}/>
      
        <br />
        <h3>Body</h3>
-      <Form.Control size="text" type="text"  as="textarea" rows={4} placeholder="Insert Body" value ={user.body} onChange={(e) => setBody(e.target.value)}/>
+      <Form.Control size="text" type="text"  as="textarea" rows={4} placeholder="Insert Body" value ={body} onChange={(e) => setBody(e.target.value)}/>
       
       <br />
       <h3>User id</h3>
-      <Form.Control size="text" type="number" placeholder="Insert user Id" value ={user.userId} onChange={(e) => setUserId(e.target.value)}/>
+      <Form.Control size="text" type="number" placeholder="Insert user Id" value ={userId} onChange={(e) => setUserId(e.target.value)}/>
       
       <Button className ="createButton" onClick={EditHandler} > Create</Button>
       </div>
