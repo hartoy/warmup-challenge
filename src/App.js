@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import { BrowserRouter, Switch, Route,  } from 'react-router-dom';
+import Login from './components/Login';
+import Home from './components/Home';
+import NavbarComp from './components/miNavbar';
+import CreateForm from './components/CreateForm';
+import EditForm from './components/EditForm';
+import Details from './components/Details';
+import SinPermiso from './components/sinPermiso';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/sinPermiso" component={SinPermiso} /> 
+      
+
+
+     <div> 
+      <NavbarComp/>
+      <Route path="/home" component={Home} />
+      <Route path="/createForm" component={CreateForm} />
+      <Route path="/editForm" component={EditForm} />
+      <Route path="/Details/:id" component={Details} />
+     </div>
+
+     </Switch>
+    
+    </BrowserRouter>
   );
 }
 
