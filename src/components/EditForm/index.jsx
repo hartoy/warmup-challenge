@@ -8,40 +8,43 @@ import './editForm.css'
 function EditForm (props){
 
     const id = props.match.params.id;
+ 
     let history = useHistory();
     
 
-    const [ user, setUser ] = useState("");
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [userId, setUserId] = useState('');
     const [newPost, setNewPost] = useState('');
 
+
+
     useEffect(() => {
       if(localStorage.email === '"challenge@alkemy.org"' && localStorage.pass === '"react"'){
-          fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-          .then((response) => {
-            return response.json()
-          })
-          .then((user) => {
-            setTitle(user.title);
-            setBody(user.body);
-            setUserId(user.userId);
-            console.log(user);
-          })
-    
+        const getPost = async () => {
+          let response = await Axios.get(
+            `https://jsonplaceholder.typicode.com/posts/${id}`
+          );
+            setTitle(response.data.title);
+            setBody(response.data.body);
+            setUserId(response.data.userId);
+            console.log(response);
+        };
+        getPost();
       }else{
         history.push("/sinPermiso");
       }
     }, []);
 
 
-    const EditHandler = async (e) => {
-      let response = await Axios.post(
+
+
+    const EditHandler = async () => {
+      let response = await Axios.put(
         `https://jsonplaceholder.typicode.com/posts/${id}`,JSON.stringify({
-          title: user.title,
-          body: user.body,
-          userId: user.userId,
+          title: title,
+          body: body,
+          userId: userId,
         }),
         {
           headers: {
@@ -49,8 +52,8 @@ function EditForm (props){
           },
         }  
       );
-      setNewPost(response.e);
-      console.log(newPost);
+      setNewPost(response);
+      console.log(response.data);
       alert(" Post modificado");
     };
 

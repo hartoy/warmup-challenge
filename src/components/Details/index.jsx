@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Card ,Row ,Button, Container } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
+import Axios from "axios";
 import './details.css'
 
 
@@ -13,26 +14,29 @@ function Details (props){
    
     let history = useHistory();
 
-    useEffect(() => {
+
+      useEffect(() => {
         if(localStorage.email === '"challenge@alkemy.org"' && localStorage.pass === '"react"'){
-            fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-            .then((response) => {
-              return response.json()
-            })
-            .then((user) => {
-              setUser(user)
-              console.log(user);
-              setLoading(true)
-            })
-      
+          const getPost = async () => {
+            let response = await Axios.get(
+              `https://jsonplaceholder.typicode.com/posts/${id}`
+            );
+            setUser(response.data)
+            setLoading(true)
+          };
+          getPost();
         }else{
           history.push("/sinPermiso");
         }
       }, []);
 
+
+
+
  return(
   <Container>
     <Row className="home"> 
+      
          {loading &&
          
          <ul>
@@ -40,6 +44,7 @@ function Details (props){
              <li> Body: {user.body} </li>
              <li> Title: {user.title} </li>
              <li> UserId: {user.userId} </li>
+             <Button className ="goback" as={Link} to={`/home`}> Go Back</Button>
          </ul>
          
          

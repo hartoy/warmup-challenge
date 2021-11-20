@@ -23,12 +23,13 @@ function Login (){
   let validationHandler = (e) => {
     e.preventDefault();
     if (email === 'challenge@alkemy.org' && password === 'react'){
-      //localStorage.setItem("token",JSON.stringify(10224590504484555));
       localStorage.setItem("email",JSON.stringify('challenge@alkemy.org'));
       localStorage.setItem("pass",JSON.stringify('react'));
       history.push('/home');
+
     }else if(password.length === 0 && email.length === 0) {
       setEmpty(true);
+    
     }else{
       setLogin(false);
     }

@@ -18,15 +18,14 @@ function Home (){
 
   useEffect(() => {
     if(localStorage.email === '"challenge@alkemy.org"' && localStorage.pass === '"react"'){
-      fetch('https://jsonplaceholder.typicode.com/posts')
-      .then((response) => {
-        return response.json()
-      })
-      .then((users) => {
-        setUsers(users)
+      const getPost = async () => {
+        let response = await Axios.get(
+          'https://jsonplaceholder.typicode.com/posts'
+        );
+        setUsers(response.data)
         setIsLoading(false)
-      })
-  
+      };
+      getPost();
     }else{
       history.push("/sinPermiso");
     }
