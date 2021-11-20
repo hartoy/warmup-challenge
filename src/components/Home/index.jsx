@@ -66,9 +66,9 @@ function Home (){
     return (
         <ul className="postList">
           <li className="eachUser" >Titulo:  {oneUser.title}</li>
-          <Button className ="detailsButton" as={Link} to={`/Details/${oneUser.id}`}> Details</Button>
-          <Button className ="editButton" as={Link} to={`/editForm/${oneUser.id}`}> Edit</Button>
-          <Button className ="botoneta" data-id={oneUser.id} onClick={RemoveHandler}> Delete</Button>
+          <Button className ="detailsButton" as={Link} to={`/Details/${oneUser.id}`}> DETAILS</Button>
+          <Button className ="editButton" as={Link} to={`/editForm/${oneUser.id}`}> EDIT</Button>
+          <Button className ="botoneta" data-id={oneUser.id} onClick={RemoveHandler}> DELETE</Button>
         </ul>
     );
   })}

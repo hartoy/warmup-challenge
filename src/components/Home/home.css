@@ -1,4 +1,12 @@
 
+.createButton{
+    background-color:black;
+    border-color:black;
+    width: 200px;
+    margin: 10px;
+}
+
+
 .botoneta{
     background-color:#FF0000;
     border-color:#FF0000;
@@ -26,18 +34,16 @@
 
 
 .eachUser{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 5px;
     font-size:25px;
 }
 
-.createButton{
-    width: 200px;
-    margin: 10px;
-}
+
 
 .postList{
     border: 2px solid;
+    border-radius: 25px;
     list-style-type: none;
     padding: 10px;
 }

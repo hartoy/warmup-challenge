@@ -39,7 +39,7 @@ function Details (props){
       
          {loading &&
          
-         <ul>
+         <ul className="detailsList">
              <li> Id: {user.id} </li>
              <li> Body: {user.body} </li>
              <li> Title: {user.title} </li>
