@@ -10,11 +10,34 @@
     background-color:black;
 }
 
+.detailsButton{
+    background-color:blue;
+    border-color:blue;
+    margin-right: 25px;
+    text-align:center;
+}
+.editButton{
+    background-color:green;
+    border-color:green;
+    margin-right: 25px;
+    text-align:center;
+}
+
+
+
 .eachUser{
     margin-top: 20px;
     margin-bottom: 5px;
+    font-size:25px;
 }
 
 .createButton{
     width: 200px;
+    margin: 10px;
+}
+
+.postList{
+    border: 2px solid;
+    list-style-type: none;
+    padding: 10px;
 }
