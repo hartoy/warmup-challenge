@@ -14,7 +14,7 @@
 
 .navbar{
     margin-bottom: 15px;
-    background: rgba(108, 122, 137, .6);
+    background-color: #585F6D;
     display:flex;
 }
 
@@ -24,7 +24,7 @@
     color:white !important;
 }
 
-.superherohover{
-    color: red !important;
+.superhero:hover{
+    color:#E1955A !important;
 }
 

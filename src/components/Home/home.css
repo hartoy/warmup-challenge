@@ -1,4 +1,6 @@
-
+.home{
+    background-color: #24262C;
+}
 .createButton{
     background-color:black;
     border-color:black;
@@ -8,42 +10,62 @@
 
 
 .botoneta{
-    background-color:#FF0000;
+    background-color:#24262C;
     border-color:#FF0000;
     margin-right: 25px;
     text-align:center;
+    color:red;
 }
 
 .botoneta:hover{
-    background-color:black;
+    background-color:red;
+    color:white;
 }
 
 .detailsButton{
-    background-color:blue;
-    border-color:blue;
+    background-color:#24262C;
+    border-color:#7099B3;
     margin-right: 25px;
     text-align:center;
+    color:#7099B3
 }
+
+.detailsButton:hover{
+    background-color:#7099B3;
+    color:white;
+}
+
 .editButton{
-    background-color:green;
+    background-color:#24262C;
     border-color:green;
     margin-right: 25px;
     text-align:center;
+    color:green;
 }
 
-
+.editButton:hover{
+    background-color:green;
+    color:white;
+}
 
 .eachUser{
     margin-top: 10px;
     margin-bottom: 5px;
     font-size:25px;
+    color:#E1955A;
 }
 
-
+.eachUser:hover{
+    color:white;
+}
 
 .postList{
     border: 2px solid;
-    border-radius: 25px;
+    border-color: #E1955A;
     list-style-type: none;
     padding: 10px;
+    background-color: #585F6D;
+    margin: 10px;
+    width: 95%;
 }
+

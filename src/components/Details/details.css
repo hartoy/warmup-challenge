@@ -4,11 +4,13 @@
 
 .detailsList{
     margin-top:30px;
-    background-color:#98FB98;
-    border-radius:25px;
+    background-color: #585F6D;
+    color:#E1955A;
     padding:20px;
     font-size: 25px;
     list-style: none;
+    margin: 10px;
+    width: 95%;
 }
 
 .detailsList li{

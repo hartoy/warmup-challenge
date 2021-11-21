@@ -15,7 +15,7 @@ function NavbarComp (){
         <Container>
       <Nav.Link className="superhero" as={Link} to={`/home`} >Home</Nav.Link>
       <Nav.Link className="superhero" as={Link} to={`/createForm`} >Create Form</Nav.Link>
-      <Navbar.Toggle aria-controls="navbarScroll" />
+      
       <Navbar.Collapse id="navbarScroll">
         <Nav
           className="mr-auto my-2 my-lg-0"

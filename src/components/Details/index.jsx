@@ -44,7 +44,7 @@ function Details (props){
              <li> Body: {user.body} </li>
              <li> Title: {user.title} </li>
              <li> UserId: {user.userId} </li>
-             <Button className ="goback" as={Link} to={`/home`}> Go Back</Button>
+             <Button className ="createButton" as={Link} to={`/home`}> Go Back</Button>
          </ul>
          
          
