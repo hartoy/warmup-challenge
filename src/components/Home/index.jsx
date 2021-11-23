@@ -17,7 +17,6 @@ function Home (){
 
 
   useEffect(() => {
-    if(localStorage.email === '"challenge@alkemy.org"' && localStorage.pass === '"react"'){
       const getPost = async () => {
         let response = await Axios.get(
           'https://jsonplaceholder.typicode.com/posts'
@@ -26,9 +25,6 @@ function Home (){
         setIsLoading(false)
       };
       getPost();
-    }else{
-      history.push("/sinPermiso");
-    }
   }, []);
 
 

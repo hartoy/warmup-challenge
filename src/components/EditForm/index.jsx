@@ -20,7 +20,7 @@ function EditForm (props){
 
 
     useEffect(() => {
-      if(localStorage.email === '"challenge@alkemy.org"' && localStorage.pass === '"react"'){
+      
         const getPost = async () => {
           let response = await Axios.get(
             `https://jsonplaceholder.typicode.com/posts/${id}`
@@ -31,9 +31,7 @@ function EditForm (props){
             console.log(response);
         };
         getPost();
-      }else{
-        history.push("/sinPermiso");
-      }
+      
     }, []);
 
 
